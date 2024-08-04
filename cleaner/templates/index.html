@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matn tozalovchi</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Matn tozalovchi</h1>
+        </header>
+        <div id="content">
+            <div id="input-section">
+                <h2>Matn kiriting</h2>
+                <textarea id="inputText" rows="10" placeholder="Tozalash uchun matn kiriting"></textarea>
+                <div id="input-actions">
+                    <button onclick="clearText()">O'chirish</button>
+                </div>
+            </div>
+            <div id="options-section">
+                <h2>Matn tozalash kategoriyalari</h2>
+                <label><input type="checkbox" id="removePunctuation"> Tinish belgilaridan tozalash</label><br>
+                <label><input type="checkbox" id="removeWhitespace"> Ortiqcha bo'shliqlarni olib tashlash</label><br>
+                <label><input type="checkbox" id="removeLineBreaks"> Ortiqcha tablarni olib tashlash</label><br>
+                <label><input type="checkbox" id="removeLineBreaks"> HTML teglarini olib tashlash</label><br>
+                <label><input type="checkbox" id="removeLineBreaks"> URL manzillarini olib tashlash</label><br>
+                <label><input type="checkbox" id="removeLineBreaks"> Emojislarni olib tashlash</label><br>
+                <label><input type="checkbox" id="removeLineBreaks"> Maxsus belgilarni olib tashlash</label><br>
+                <label><input type="checkbox" id="removeLineBreaks"> Nomuhim so'zlarni olib tashlash</label><br>
+                <label><input type="checkbox" id="removeLineBreaks"> Emaillarni olib tashlash</label><br>
+                <label><input type="checkbox" id="removeLineBreaks"> Harflarni normallashtirish</label><br>
+                <!-- Add more options as needed -->
+                <div id="option-actions">
+                    <button onclick="cleanText()">Matn tozalansin</button>
+                </div>
+            </div>
+            <div id="output-section">
+                <h2>Tozalangan matn</h2>
+                <textarea id="outputText" rows="10" readonly placeholder="Toza matn"></textarea>
+                <div id="output-actions">
+                    <button onclick="copyText()">Nusxa olish</button>
+                    <button onclick="saveText()">Saqlash</button>
+                    <button onclick="clearOutput()">O'chirish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
